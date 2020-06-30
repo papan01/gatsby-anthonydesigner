@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { useSpring, animated } from 'react-spring';
+import './style.scss';
 
 function Header() {
   const animateProps = useSpring({
@@ -8,10 +9,11 @@ function Header() {
     to: { opacity: 1, transformOrigin: '0px 0px 0px' },
     config: { duration: 250 },
   });
+
   return (
-    <nav>
+    <nav className="top-nav-bar">
       <Link to="/">
-        <svg viewBox="0 0 302.4 38.4">
+        <svg viewBox="0 0 302.4 38.4" className="logo-svg">
           <title>Anthony Wiktor</title>
           <mask id="mask0.33809672734367635">
             <g transform="translate(-108.5 -101)" fill="none" stroke="#fff" strokeWidth="9.2">
