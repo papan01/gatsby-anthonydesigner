@@ -1,12 +1,20 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Logo from './logo';
 import './style.scss';
 
 function Header() {
   return (
-    <nav className="top-nav-bar">
+    <div className="top-nav-bar">
       <Logo />
-    </nav>
+      <nav className="navigation">
+        <div>
+          <Link className="navigation-link" to="/about/">
+            About
+          </Link>
+        </div>
+      </nav>
+    </div>
   );
 }
 

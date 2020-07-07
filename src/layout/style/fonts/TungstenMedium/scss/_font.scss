@@ -1,0 +1,15 @@
+$font-path: './fonts/TungstenMedium/webfonts';
+
+@font-face {
+  font-family: 'TungstenMedium';
+  src: url('#{$font-path}/Tungsten-Medium.eot');
+  src: url('#{$font-path}/Tungsten-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}/Tungsten-Medium.woff2') format('woff2'),
+    url('#{$font-path}/Tungsten-Medium.woff') format('woff'),
+    url('#{$font-path}/Tungsten-Medium.ttf') format('truetype'),
+    url('#{$font-path}/Tungsten-Medium.svg#Tungsten-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

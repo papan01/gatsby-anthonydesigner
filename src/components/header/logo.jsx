@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { useSprings, animated } from 'react-spring';
@@ -51,7 +50,7 @@ function Logo() {
     } else {
       set(i => AuthorProps(i, hover));
     }
-  }, [isFirstLoad, hover]);
+  }, [isFirstLoad, hover, set]);
 
   return (
     <Link to="/">

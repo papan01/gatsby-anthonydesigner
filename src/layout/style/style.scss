@@ -1,3 +1,51 @@
-*, ::before, ::after {
-    box-sizing: border-box;
+@import './fonts/TungstenMedium/scss/font';
+
+body {
+  padding: 0;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  transition: background-color 0.75s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+}
+
+div,
+form,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
 }
