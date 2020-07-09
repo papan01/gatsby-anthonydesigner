@@ -1,0 +1,26 @@
+$font-path: './fonts/Sequel/webfonts';
+
+@font-face {
+  font-family: 'Sequel';
+  src: url('#{$font-path}/Sequel-Regular.eot');
+  src: url('#{$font-path}/Sequel-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}/Sequel-Regular.woff2') format('woff2'),
+    url('#{$font-path}/Sequel-Regular.woff') format('woff'),
+    url('#{$font-path}/Sequel-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sequel';
+  src: url('#{$font-path}/Sequel-Bold.eot');
+  src: url('#{$font-path}/Sequel-Bold.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/Sequel-Bold.woff2') format('woff2'),
+    url('#{$font-path}/Sequel-Bold.woff') format('woff'),
+    url('#{$font-path}/Sequel-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
