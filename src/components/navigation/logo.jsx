@@ -36,7 +36,6 @@ function Logo() {
     from: { s: i === 0 ? 40 : -40 },
     to: { s: 0 },
     delay: i * 200,
-    config: { duration: 200 },
   }));
 
   const [authorProps, set] = useSprings(AuthorPaths.length, i => AuthorProps(i, true));

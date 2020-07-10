@@ -1,15 +1,31 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { useSprings, animated } from 'react-spring';
 import './style.scss';
 
+const titles = ['Shifting brands from', 'giving up to moving', 'forward.'];
+
 function Header() {
+  const [titleProps] = useSprings(titles.length, i => ({
+    from: { transform: 'matrix(1,0,0,1,0,30)', opacity: 0 },
+    to: { transform: 'matrix(1,0,0,1,0,0)', opacity: 1 },
+    delay: i * 100,
+  }));
   return (
     <header className="header" style={{ background: 'rgb(255, 255, 255)', color: 'rgb(0, 0, 0)' }}>
       <div className="header-lining">
         <h1 className="header-title">
-          <div style={{ transform: 'matrix(1, 0, 0, 1, 0, 0)', opacity: 1 }}>Shifting brands from</div>
-          <div style={{ transform: 'matrix(1, 0, 0, 1, 0, 0)', opacity: 1 }}>giving up to moving</div>
-          <div style={{ transform: 'matrix(1, 0, 0, 1, 0, 0)', opacity: 1 }}>forward.</div>
+          {titleProps.map((props, index) => (
+            <animated.div key={titles[index]} style={props}>
+              {titles[index]}
+            </animated.div>
+          ))}
         </h1>
+        <Link to="#content" title="Scroll down" className="header-content-link ">
+          <div className="animation-line-block">
+            <div className="animation-line" />
+          </div>
+        </Link>
       </div>
     </header>
   );
