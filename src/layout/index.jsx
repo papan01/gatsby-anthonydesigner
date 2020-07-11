@@ -1,19 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Navigation from '../components/navigation';
-import Header from '../components/header';
 import './style/style.scss';
 
-function Layout() {
+function Layout({ children }) {
   return (
     <div>
       <Navigation />
-      <div className="container">
-        <Header />
-      </div>
+      <div className="container">{children}</div>
     </div>
   );
 }
 
-Layout.propTypes = {};
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;

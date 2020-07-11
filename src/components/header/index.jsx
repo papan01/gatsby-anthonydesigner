@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
 import './style.scss';
 
-const titles = ['Shifting brands from', 'giving up to moving', 'forward.'];
-
-function Header() {
+function Header({ titles }) {
   const [titleProps] = useSprings(titles.length, i => ({
     from: { transform: 'matrix(1,0,0,1,0,30)', opacity: 0 },
     to: { transform: 'matrix(1,0,0,1,0,0)', opacity: 1 },
@@ -31,6 +30,8 @@ function Header() {
   );
 }
 
-Header.propTypes = {};
+Header.propTypes = {
+  titles: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Header;

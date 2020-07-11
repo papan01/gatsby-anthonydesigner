@@ -4,7 +4,7 @@ import './style.scss';
 function Content() {
   return (
     <section id="content" className="content">
-      <div />
+      <div className="content-lining" />
     </section>
   );
 }
