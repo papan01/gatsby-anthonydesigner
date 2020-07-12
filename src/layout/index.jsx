@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Navigation from '../components/navigation';
+import Scroller from '../components/scroller';
 import './style/style.scss';
 
 function Layout({ children }) {
   return (
-    <div>
+    <Scroller>
       <Navigation />
       <div className="container">{children}</div>
-    </div>
+    </Scroller>
   );
 }
 

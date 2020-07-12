@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
+import { ScrollContext } from '../scroller';
 import './style.scss';
 
+const WHITE = { background: 'rgb(255, 255, 255)', color: 'rgb(0, 0, 0)' };
+const BLACK = { background: 'rgb(0, 0, 0)', color: 'rgb(255, 255, 255)' };
+
 function Header({ titles }) {
+  const scrollContext = useContext(ScrollContext);
+  const [headerColor, setHeaderColor] = useState(WHITE);
   const [titleProps] = useSprings(titles.length, i => ({
     from: { transform: 'matrix(1,0,0,1,0,30)', opacity: 0 },
     to: { transform: 'matrix(1,0,0,1,0,0)', opacity: 1 },
     delay: i * 100,
   }));
+
+  useEffect(() => {
+    if (scrollContext.scrollValue > 20) {
+      setHeaderColor(BLACK);
+    } else {
+      setHeaderColor(WHITE);
+    }
+  }, [scrollContext.scrollValue]);
+
   return (
-    <header className="header" style={{ background: 'rgb(255, 255, 255)', color: 'rgb(0, 0, 0)' }}>
+    <header className="header" style={headerColor}>
       <div className="header-lining">
         <h1 className="header-title">
           {titleProps.map((props, index) => (
