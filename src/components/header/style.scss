@@ -40,11 +40,11 @@
       line-height: 0.9;
       font-size: 9vw;
 
-      @include media-breakpoint-up(95.3125em) {
+      @include media-breakpoint-up(56.25em) {
         font-size: 4.2vw;
       }
 
-      @include media-breakpoint-up(56.25em) {
+      @include media-breakpoint-up(95.3125em) {
         font-size: 4.375rem;
       }
     }

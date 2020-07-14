@@ -1,5 +1,4 @@
 @import '../../layout/style/base/breakpoints';
-@import '../../layout/style/base/flex';
 
 .content {
   width: 100%;
@@ -26,6 +25,8 @@
     --gap: 1.25rem;
     grid-template-columns: repeat(var(--cols, 2), 1fr);
     margin-top: -3.75rem;
+    grid-column-gap: var(--gap);
+    grid-row-gap: var(--gap);
 
     @include media-breakpoint-up($breakpoint-xs) {
       --cols: 3;

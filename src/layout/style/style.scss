@@ -1,5 +1,6 @@
 @import './fonts/TungstenMedium/scss/font';
 @import './fonts/Sequel/scss/font';
+@import './palette';
 
 html {
   font-size: 16px;
@@ -12,7 +13,7 @@ body {
   padding: 0;
   margin: 0;
   color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
+  background-color: var(--global);
   transition: background-color 0.75s cubic-bezier(0.8, 0, 0.2, 1) 0s;
 }
 

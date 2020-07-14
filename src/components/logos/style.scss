@@ -1,0 +1,9 @@
+$logos: (
+  'lakers': '--lakers',
+);
+
+@each $logo, $color in $logos {
+  .#{$logo}:hover {
+    --global: var(#{$color});
+  }
+}

@@ -3,10 +3,11 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
 import { ScrollContext } from '../scroller';
+import SCROLL_TOP_ANIMATION from '../../constants';
 import './style.scss';
 
 const WHITE = { background: 'rgb(255, 255, 255)', color: 'rgb(0, 0, 0)' };
-const BLACK = { background: 'rgb(0, 0, 0)', color: 'rgb(255, 255, 255)' };
+const BLACK = { background: 'transparent', color: 'rgb(255, 255, 255)' };
 
 function Header({ titles }) {
   const scrollContext = useContext(ScrollContext);
@@ -18,7 +19,7 @@ function Header({ titles }) {
   }));
 
   useEffect(() => {
-    if (scrollContext.scrollValue > 20) {
+    if (scrollContext.scrollValue > SCROLL_TOP_ANIMATION) {
       setHeaderColor(BLACK);
     } else {
       setHeaderColor(WHITE);
