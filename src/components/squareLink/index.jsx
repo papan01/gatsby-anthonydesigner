@@ -16,14 +16,17 @@ function SquareLink({ children, fadeInStyle, cover, href, title, onMouseOver, on
     }
   }, [scrollContext.scrollValue]);
   return (
-    <div
-      className="square-link"
-      style={fadeInStyle}
-      onMouseOver={onMouseOver}
-      onMouseLeave={onMouseLeave}
-      onFocus={onMouseOver}
-    >
-      <a href={href} title={title} className={linkClassName}>
+    <div className="square-link" style={fadeInStyle}>
+      <a
+        href={href}
+        title={title}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkClassName}
+        onMouseOver={onMouseOver}
+        onMouseLeave={onMouseLeave}
+        onFocus={onMouseOver}
+      >
         <Img fluid={{ ...cover.childImageSharp.fluid }} className="square-img" />
         {children}
       </a>

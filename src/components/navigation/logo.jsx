@@ -11,21 +11,13 @@ const AuthorPaths = [
 
 const AuthorProps = (index, isFadeIn) => {
   const delayArr = [0, 150];
-  let transformMatrixFrom = '';
-  let transformMatrixTo = '';
-  if (isFadeIn) {
-    transformMatrixFrom = index === 0 ? 'matrix(1.2,0,0,1,3,0)' : 'matrix(1.2,0,0,1,-21,0)';
-    transformMatrixTo = 'matrix(1,0,0,1,0,0)';
-  } else {
-    transformMatrixFrom = 'matrix(1,0,0,1,0,0)';
-    transformMatrixTo = index === 0 ? 'matrix(1.2,0,0,1,3,0)' : 'matrix(1.2,0,0,1,-21,0)';
-  }
-
   return {
-    from: { opacity: isFadeIn ? 0 : 1, transform: transformMatrixFrom },
-    to: { opacity: isFadeIn ? 1 : 0, transform: transformMatrixTo },
+    from: { opacity: 0, transform: index === 0 ? 'matrix(1.2,0,0,1,3,0)' : 'matrix(1.2,0,0,1,-21,0)' },
+    to: { opacity: 1, transform: 'matrix(1,0,0,1,0,0)' },
     delay: isFadeIn ? delayArr[index] : delayArr[(index + 1) % delayArr.length],
     config: { duration: 300, easing: easings.easeCubicInOut },
+    reset: true,
+    reverse: !isFadeIn,
   };
 };
 
