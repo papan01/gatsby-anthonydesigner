@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { useSprings, animated } from 'react-spring';
+import { useTrail, animated } from 'react-spring';
 import { ScrollContext } from '../scroller';
-import SCROLL_TOP_ANIMATION from '../../constants';
+import { SCROLL_TOP_ANIMATION, HEADER_DELAY } from '../../constants';
 import './style.scss';
 
 const WHITE = { background: 'rgb(255, 255, 255)', color: 'rgb(0, 0, 0)' };
@@ -12,10 +12,10 @@ const BLACK = { background: 'transparent', color: 'rgb(255, 255, 255)' };
 function Header({ titles }) {
   const scrollContext = useContext(ScrollContext);
   const [headerColor, setHeaderColor] = useState(WHITE);
-  const [titleProps] = useSprings(titles.length, i => ({
+  const [titleProps] = useTrail(titles.length, () => ({
     from: { transform: 'matrix(1,0,0,1,0,30)', opacity: 0 },
     to: { transform: 'matrix(1,0,0,1,0,0)', opacity: 1 },
-    delay: i * 100,
+    delay: HEADER_DELAY,
   }));
 
   useEffect(() => {

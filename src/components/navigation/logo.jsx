@@ -10,12 +10,12 @@ const AuthorPaths = [
 ];
 
 const AuthorProps = (index, isFadeIn) => {
-  const delayArr = [0, 150];
+  const delayArr = [0, 250];
   return {
     from: { opacity: 0, transform: index === 0 ? 'matrix(1.2,0,0,1,3,0)' : 'matrix(1.2,0,0,1,-21,0)' },
     to: { opacity: 1, transform: 'matrix(1,0,0,1,0,0)' },
     delay: isFadeIn ? delayArr[index] : delayArr[(index + 1) % delayArr.length],
-    config: { duration: 300, easing: easings.easeCubicInOut },
+    config: { easing: easings.easeCubicIn },
     reset: true,
     reverse: !isFadeIn,
   };

@@ -1,11 +1,13 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { animated } from 'react-spring';
 import { ScrollContext } from '../scroller';
-import SCROLL_TOP_ANIMATION from '../../constants';
+import { SCROLL_TOP_ANIMATION } from '../../constants';
 import './style.scss';
 
-function SquareLink({ children, fadeInStyle, cover, href, title, onMouseOver, onMouseLeave }) {
+function SquareLink({ children, fadeInStyle, cover, href, title, onMouseEnter, onMouseLeave }) {
   const [linkClassName, setLinkClassName] = useState('square-link-white');
   const scrollContext = useContext(ScrollContext);
   useEffect(() => {
@@ -16,42 +18,42 @@ function SquareLink({ children, fadeInStyle, cover, href, title, onMouseOver, on
     }
   }, [scrollContext.scrollValue]);
   return (
-    <div className="square-link" style={fadeInStyle}>
+    <animated.div className="square-link" style={fadeInStyle}>
       <a
         href={href}
         title={title}
         target="_blank"
         rel="noopener noreferrer"
         className={linkClassName}
-        onMouseOver={onMouseOver}
+        onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        onFocus={onMouseOver}
+        onFocus={onMouseEnter}
       >
         <Img fluid={{ ...cover.childImageSharp.fluid }} className="square-img" />
         {children}
       </a>
-    </div>
+    </animated.div>
   );
 }
 
 SquareLink.propTypes = {
   children: PropTypes.node,
   fadeInStyle: PropTypes.shape({
-    transform: PropTypes.string,
-    opacity: PropTypes.number,
+    transform: PropTypes.object,
+    opacity: PropTypes.object,
   }).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   cover: PropTypes.object.isRequired,
   href: PropTypes.string.isRequired,
   title: PropTypes.string,
-  onMouseOver: PropTypes.func,
+  onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
 };
 
 SquareLink.defaultProps = {
   children: null,
   title: '',
-  onMouseOver: () => {},
+  onMouseEnter: () => {},
   onMouseLeave: () => {},
 };
 
