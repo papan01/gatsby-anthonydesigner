@@ -1,9 +1,10 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { useState, useRef, useEffect, Fragment } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useRef, Fragment } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Global } from '@emotion/core';
 import { Power3 } from '../../lib/gsap';
+import useLogos from './useLogos';
 import useTimeline from '../../hooks/animation';
 import SquareLink from '../squareLink';
 
@@ -49,11 +50,10 @@ const query = graphql`
 
 function Lakers({ fadeInStyle }) {
   const { cover } = useStaticQuery(query);
-  const [globalColor, setGlobalColor] = useState(null);
   const tl = useTimeline({ paused: true });
   const textRefs = [useRef(), useRef()];
   const maskRefs = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
-  useEffect(() => {
+  const { globalColor, onMouseEnter, onMouseLeave } = useLogos(COLOR, tl, () => {
     const maskRefCurrents = [
       maskRefs[0].current,
       maskRefs[1].current,
@@ -75,17 +75,7 @@ function Lakers({ fadeInStyle }) {
     tl.to(textRefs[0].current, 0.8, { x: 0, opacity: 1, ease: Power3.easeOut });
     tl.to(textRefs[1].current, 0.8, { x: 0, opacity: 1, ease: Power3.easeOut }, '-=.6');
     tl.to(maskRefCurrents, 1.3, { drawSVG: '100%', ease: Power3.easeInOut }, '-=.8');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const onMouseEnter = () => {
-    setGlobalColor(COLOR);
-    tl.play();
-  };
-  const onMouseLeave = () => {
-    setGlobalColor(null);
-    tl.reverse();
-  };
+  });
 
   return (
     <SquareLink

@@ -1,3 +1,4 @@
 import Lakers from './lakers';
+import DisneyPlus from './disneyPlus';
 
-export default [Lakers];
+export default [Lakers, DisneyPlus];
