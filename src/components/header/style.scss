@@ -40,6 +40,10 @@
       line-height: 0.9;
       font-size: 9vw;
 
+      .line {
+        opacity: 0;
+      }
+
       @include media-breakpoint-up(56.25em) {
         font-size: 4.2vw;
       }

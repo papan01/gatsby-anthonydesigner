@@ -10,3 +10,14 @@ const useTimeline = (options = {}) => {
 };
 
 export default useTimeline;
+
+export const useControlledTimeline = (options, playProp) => {
+  const tl = useTimeline(options);
+
+  useEffect(() => {
+    tl.paused(!playProp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playProp]);
+
+  return tl;
+};
