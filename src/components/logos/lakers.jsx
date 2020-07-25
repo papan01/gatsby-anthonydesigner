@@ -1,7 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef, Fragment } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import PropTypes from 'prop-types';
 import { Global } from '@emotion/core';
 import { Power3 } from '../../lib/gsap';
 import useLogos from './useLogos';
@@ -78,14 +77,7 @@ function Lakers({ fadeInStyle }) {
   });
 
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg viewBox="0 0 527.95 347.31" width="53%" fill="currentColor">
         {TextPaths.map((path, index) => (
@@ -110,12 +102,5 @@ function Lakers({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-Lakers.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default Lakers;

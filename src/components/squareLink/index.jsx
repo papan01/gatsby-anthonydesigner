@@ -2,12 +2,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { animated } from 'react-spring';
 import { ScrollContext } from '../scroller';
-import { SCROLL_TOP_ANIMATION } from '../../constants';
+import SCROLL_TOP_ANIMATION from '../../constants';
 import './style.scss';
 
-function SquareLink({ children, fadeInStyle, cover, href, title, onMouseEnter, onMouseLeave }) {
+function SquareLink({ children, cover, href, title, onMouseEnter, onMouseLeave }) {
   const [linkClassName, setLinkClassName] = useState('square-link-white');
   const scrollContext = useContext(ScrollContext);
   useEffect(() => {
@@ -18,7 +17,7 @@ function SquareLink({ children, fadeInStyle, cover, href, title, onMouseEnter, o
     }
   }, [scrollContext.scrollValue]);
   return (
-    <animated.div className="square-link" style={fadeInStyle}>
+    <div className="square-link">
       <a
         href={href}
         title={title}
@@ -32,16 +31,12 @@ function SquareLink({ children, fadeInStyle, cover, href, title, onMouseEnter, o
         <Img fluid={{ ...cover.childImageSharp.fluid }} className="square-img" />
         {children}
       </a>
-    </animated.div>
+    </div>
   );
 }
 
 SquareLink.propTypes = {
   children: PropTypes.node,
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   cover: PropTypes.object.isRequired,
   href: PropTypes.string.isRequired,

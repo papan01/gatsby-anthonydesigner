@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Power4 } from '../../lib/gsap';
 import { ScrollContext } from '../scroller';
-import { SCROLL_TOP_ANIMATION } from '../../constants';
+import SCROLL_TOP_ANIMATION from '../../constants';
 import useTimeline from '../../hooks/animation';
 import './style.scss';
 

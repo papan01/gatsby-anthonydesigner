@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { Power2 } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function Nestea({ fadeInStyle }) {
+function Nestea() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const signet = useRef();
@@ -44,14 +43,7 @@ function Nestea({ fadeInStyle }) {
     });
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg viewBox="0 -10 61.8 60.5" width="45%" fill="currentColor">
         <path
@@ -96,12 +88,5 @@ function Nestea({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-Nestea.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default Nestea;

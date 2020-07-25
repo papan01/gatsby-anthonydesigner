@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { Power3, Back } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function DisneyPlus({ fadeInStyle }) {
+function DisneyPlus() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const svg = useRef();
@@ -43,14 +42,7 @@ function DisneyPlus({ fadeInStyle }) {
     tl.to(plus.current, 0.5, { scale: 1, opacity: 1, ease: Back.easeOut }, '-=.5');
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg ref={svg} viewBox="0 0 977.3 564.9" width="53%" fill="currentColor">
         <g ref={lettersGroup}>
@@ -94,12 +86,5 @@ function DisneyPlus({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-DisneyPlus.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default DisneyPlus;

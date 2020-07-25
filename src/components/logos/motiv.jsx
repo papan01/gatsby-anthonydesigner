@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { TimelineMax, Power2, Linear } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function Motiv({ fadeInStyle }) {
+function Motiv() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const linesGroup = useRef();
@@ -52,14 +51,7 @@ function Motiv({ fadeInStyle }) {
     tl.to(drawTL, 1.5, { progress: 1, ease: Power2.easeInOut });
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg viewBox="0 0 376 56.6" width="60%">
         <defs>
@@ -100,12 +92,5 @@ function Motiv({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-Motiv.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default Motiv;

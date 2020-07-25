@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { Power3 } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function Rams({ fadeInStyle }) {
+function Rams() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const path = useRef();
@@ -35,14 +34,7 @@ function Rams({ fadeInStyle }) {
     });
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg viewBox="0 0 94 67.2" width="45%">
         <path
@@ -69,12 +61,5 @@ function Rams({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-Rams.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default Rams;

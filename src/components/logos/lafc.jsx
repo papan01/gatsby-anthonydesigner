@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { Power3 } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function LAFC({ fadeInStyle }) {
+function LAFC() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const svg = useRef();
@@ -103,14 +102,7 @@ function LAFC({ fadeInStyle }) {
     );
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg ref={svg} viewBox="-100 -100 500 612.7" width="45%" fill="currentColor">
         <path
@@ -134,12 +126,5 @@ function LAFC({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-LAFC.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default LAFC;

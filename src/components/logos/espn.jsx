@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { Power3 } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function ESPN({ fadeInStyle }) {
+function ESPN() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const mask = useRef(`mask${Math.random()}`);
@@ -39,14 +38,7 @@ function ESPN({ fadeInStyle }) {
     tl.to(line.current, 0.3, { x: 0, ease: Power3.easeOut }, '-=.5');
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg viewBox="-50 0 151.2 12.8" width="100%">
         <defs>
@@ -65,12 +57,5 @@ function ESPN({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-ESPN.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default ESPN;

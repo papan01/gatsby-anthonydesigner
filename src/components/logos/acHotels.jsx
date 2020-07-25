@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { Power4 } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function AcHotels({ fadeInStyle }) {
+function AcHotels() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const svg = useRef();
@@ -100,14 +99,7 @@ function AcHotels({ fadeInStyle }) {
     tl.timeScale(1.7);
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg ref={svg} viewBox="-10 -10 66.9 66.9" width="46%" fill="currentColor">
         <clipPath id="ac-hotels-clip">
@@ -176,12 +168,5 @@ c0,0,0,0,0,0.1c0.1,0.5,0.1,0.5-0.5,0.5h-2.8L31.2,26.6z"
     </SquareLink>
   );
 }
-
-AcHotels.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default AcHotels;

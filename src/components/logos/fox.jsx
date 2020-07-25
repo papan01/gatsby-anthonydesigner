@@ -1,6 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Global } from '@emotion/core';
 import { Power2, Elastic } from '../../lib/gsap';
@@ -24,7 +23,7 @@ const query = graphql`
   }
 `;
 
-function FOX({ fadeInStyle }) {
+function FOX() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const svg = useRef();
@@ -64,14 +63,7 @@ function FOX({ fadeInStyle }) {
     tl.timeScale(1.3);
   });
   return (
-    <SquareLink
-      cover={cover}
-      fadeInStyle={fadeInStyle}
-      href={LINK}
-      title={TITLE}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <SquareLink cover={cover} href={LINK} title={TITLE} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {globalColor && <Global styles={{ body: { backgroundColor: globalColor } }} />}
       <svg viewBox="-20 -40 89.09 105" width="53%" fill="currentColor" style={{ marginTop: 10 }}>
         <g ref={lettersGroup}>
@@ -83,12 +75,5 @@ function FOX({ fadeInStyle }) {
     </SquareLink>
   );
 }
-
-FOX.propTypes = {
-  fadeInStyle: PropTypes.shape({
-    transform: PropTypes.object,
-    opacity: PropTypes.object,
-  }).isRequired,
-};
 
 export default FOX;
