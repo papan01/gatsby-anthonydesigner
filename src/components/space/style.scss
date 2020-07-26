@@ -1,0 +1,8 @@
+@import '../../layout/style/base/breakpoints';
+
+.space {
+  height: 100px;
+  @include media-breakpoint-up(56.25em) {
+    height: 200px;
+  }
+}

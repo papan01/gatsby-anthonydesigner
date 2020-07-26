@@ -1,0 +1,21 @@
+@import '../../layout/style/base/breakpoints';
+
+.section-title {
+  display: inline-block;
+  position: relative;
+  font-size: 3.5vw;
+  margin: 0px 0px -0.3em -0.45em;
+  @include media-breakpoint-up(56.25em) {
+    font-size: 3.0vw;
+  }
+  @include media-breakpoint-up(95.3125em) {
+    font-size: 2.475rem;
+  }
+  > svg {
+    display: block;
+    height: 2.65ex;
+    fill: none;
+    stroke-width: 1.5;
+    stroke: currentcolor;
+  }
+}

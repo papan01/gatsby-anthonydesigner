@@ -1,0 +1,29 @@
+@import '../layout/style/base/breakpoints';
+
+.video-section {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  > video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+    background: rgb(0, 0, 0);
+  }
+
+  > p {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 4vw;
+    line-height: 0.9;
+    margin: 3.75rem 1.875rem;
+
+    @include media-breakpoint-up($breakpoint-xs) {
+        margin: 8.125rem 1.875rem 5.625rem;
+      }
+  }
+}

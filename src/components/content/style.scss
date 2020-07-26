@@ -20,7 +20,7 @@
     padding-left: 3.75rem;
   }
 
-  .content-lining {
+  .content-grid {
     display: grid;
     --gap: 1.25rem;
     grid-template-columns: repeat(var(--cols, 2), 1fr);

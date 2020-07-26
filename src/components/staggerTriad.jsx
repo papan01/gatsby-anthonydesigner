@@ -8,14 +8,14 @@ function StaggerTriad({ autoPlay, children }) {
   const tl = useTimeline(autoPlay ? { delay: 1 } : { paused: true });
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: '-20% 0px',
   });
 
   const refs = [];
 
   useEffect(() => {
     if (inView) tl.play();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
 
   useEffect(() => {
     tl.set(refs, { y: 50 });
@@ -31,20 +31,22 @@ function StaggerTriad({ autoPlay, children }) {
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return children.map((child, index) => (
-    <div
-      key={child.name}
-      ref={ref => {
-        if (index === 0) {
-          inViewRef(ref);
-        }
-        refs.push(ref);
-      }}
-      style={{ opacity: 0 }}
-    >
-      {child}
-    </div>
-  ));
+  return children.map((child, index) => {
+    return (
+      <div
+        key={child.type.name}
+        ref={ref => {
+          if (index === 0) {
+            inViewRef(ref);
+          }
+          refs.push(ref);
+        }}
+        style={{ opacity: 0 }}
+      >
+        {child}
+      </div>
+    );
+  });
 }
 
 StaggerTriad.propTypes = {
