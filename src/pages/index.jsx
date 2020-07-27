@@ -7,6 +7,8 @@ import Logos from '../components/logos';
 import StaggerTriad from '../components/staggerTriad';
 import Space from '../components/space';
 import SectionTitle from '../components/sectionTitle';
+import AdVictorem from '../components/logos/adVictorem';
+import Footer from '../components/footer';
 import avFlagVideo from '../../static/video/av-flag.mp4';
 import './index.scss';
 
@@ -50,8 +52,15 @@ const IndexPage = () => {
             <br />
             BRANDS WIN.
           </p>
+          <div className="video-description">
+            <a target="_blank" rel="noopener noreferrer" href="https://advictorem.agency/">
+              VISIT AD VICTOREM
+            </a>
+            <AdVictorem />
+          </div>
         </div>
       </Content>
+      <Footer />
     </Layout>
   );
 };

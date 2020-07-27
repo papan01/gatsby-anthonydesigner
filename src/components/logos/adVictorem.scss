@@ -1,0 +1,39 @@
+@import '../../layout/style/base/breakpoints';
+
+.ad-victorem {
+  position: relative;
+  width: 2em;
+  margin-left: 0.625rem;
+
+  @include media-breakpoint-up($breakpoint-xs) {
+    width: 4em;
+  }
+
+  .ad-board {
+    position: absolute;
+    z-index: 1;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+  }
+
+  .color-triangles-wrapper {
+      display: none;
+      .color-triangle {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        mix-blend-mode: screen;
+        will-change: transform;
+      }
+  }
+
+  .logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    fill: currentcolor;
+  }
+}
