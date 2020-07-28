@@ -1,4 +1,5 @@
 @import '../../layout/style/base/flex';
+@import '../../layout/style/base/breakpoints';
 
 .footer-container {
   @include flexbox;
@@ -13,6 +14,36 @@
       font-family: TungstenMedium, sans-serif;
       letter-spacing: 0.5em;
       text-transform: uppercase;
+    }
+    > ul {
+      display: inline-grid;
+      grid-auto-flow: column;
+      gap: 1.25rem;
+
+      @include media-breakpoint-up($breakpoint-xs) {
+        gap: 0.625rem;
+      }
+
+      .social-links {
+        font-weight: 800;
+        line-height: 1;
+        font-family: Sequel, sans-serif;
+        text-transform: uppercase;
+        font-size: 5vw;
+        transition: color 0.3s ease 0s;
+        @include media-breakpoint-up(56.25em) {
+          font-size: 2.4vw;
+        }
+
+        &:hover {
+          color: var(--color);
+        }
+
+        &:after {
+          content: '.';
+          color: var(--color);
+        }
+      }
     }
   }
 }

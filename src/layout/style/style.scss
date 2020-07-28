@@ -68,6 +68,16 @@ a {
   padding: 0;
 }
 
+body, figure, h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote {
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+}
+
+ol li, ul li {
+  list-style: none;
+}
+
 .container {
   transform: none;
   width: 100%;
