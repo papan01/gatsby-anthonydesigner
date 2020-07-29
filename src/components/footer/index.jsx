@@ -17,7 +17,7 @@ function Footer() {
       <div className="footer-container">
         <div className="social-links">
           <span className="sub-title">GET IN TOUCH</span>
-          <div style={{ height: '20px' }} />
+          <Space styleClassName="space-20" />
           <ul>
             {socialLinks.map(({ name, link, color }) => (
               <li key={name}>
@@ -33,6 +33,7 @@ function Footer() {
               </li>
             ))}
           </ul>
+          <Space styleClassName="space-50-100" />
         </div>
       </div>
     </footer>

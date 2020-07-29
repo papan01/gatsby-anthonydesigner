@@ -3,15 +3,16 @@
 $breakpoint-xs: 576px !default;
 //landscape phones, less than 768px
 //tablets, 768px and up
-$breakpoint-sm: 768px !default;
+$breakpoint-tablet-sm: 600px !default;
+$breakpoint-tablet-md: 768px !default;
+$breakpoint-tablet-lg: 900px !default;
 //tablets, less than 1080px
-//desktops, 1080px and up
-$breakpoint-md: 1080px !default;
-//desktops, less than 1300px
-//large desktops, 1300px and up
-$breakpoint-lg: 1300px !default;
-
-$breakpoints: $breakpoint-xs, $breakpoint-sm, $breakpoint-md, $breakpoint-lg !default;
+//laptop, 1080px and up
+$breakpoint-tablet-sm: 1080px !default;
+$breakpoint-laptop-md: 1300px !default;
+$breakpoint-laptop-lg: 1440px !default;
+//laptop, less than 1300px
+//large laptop, 1300px and up
 
 @mixin media-breakpoint-up($media-query) {
   @media (min-width: $media-query) {

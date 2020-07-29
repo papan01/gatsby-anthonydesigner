@@ -31,7 +31,7 @@
         text-transform: uppercase;
         font-size: 5vw;
         transition: color 0.3s ease 0s;
-        @include media-breakpoint-up(56.25em) {
+        @include media-breakpoint-up($breakpoint-tablet-lg) {
           font-size: 2.4vw;
         }
 
