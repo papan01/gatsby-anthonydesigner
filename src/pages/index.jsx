@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
-import Layout from '../layout';
 import Header from '../components/header';
 import Content, { ContentGrid } from '../components/content';
 import Logos from '../components/logos';
@@ -16,7 +15,7 @@ const titles = ['Shifting brands from', 'giving up to moving', 'forward.'];
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <>
       <Header titles={titles} />
       <Content>
         <ContentGrid>
@@ -61,7 +60,7 @@ const IndexPage = () => {
         </div>
       </Content>
       <Footer />
-    </Layout>
+    </>
   );
 };
 

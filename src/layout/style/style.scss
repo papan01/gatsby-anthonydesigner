@@ -1,6 +1,11 @@
 @import './fonts/TungstenMedium/scss/font';
 @import './fonts/Sequel/scss/font';
 
+::selection {
+  background-color: rgba(200, 200, 200, 0.99);
+  color: rgb(0, 0, 0);
+}
+
 html {
   font-size: 16px;
   font-family: Sequel, sans-serif;
@@ -76,14 +81,4 @@ body, figure, h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote {
 
 ol li, ul li {
   list-style: none;
-}
-
-.container {
-  transform: none;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  top: 0px;
-  left: 0px;
-  transition: transform 1000ms cubic-bezier(0.8, 0, 0.2, 1) 0s;
 }

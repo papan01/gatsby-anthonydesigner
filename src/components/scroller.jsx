@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { setPageYOffset } from './transition';
 
 export const ScrollContext = React.createContext({ scrollValue: 0 });
 
@@ -9,6 +10,7 @@ function Scroller({ children }) {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       const handleScroll = () => {
         setScroller(document.documentElement.scrollTop);
+        setPageYOffset(document.documentElement.scrollTop);
       };
       window.addEventListener('scroll', handleScroll);
       return () => {
