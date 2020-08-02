@@ -1,39 +1,34 @@
 @import '../../layout/style/base/breakpoints';
+@import '../../layout/style/base/common';
 
 .content {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 95rem;
-  padding-right: 1.25rem;
-  padding-left: 1.25rem;
+  @extend .content-indentation;
+}
+
+.content-grid {
+  display: grid;
+  --gap: 1.25rem;
+  grid-template-columns: repeat(var(--cols, 2), 1fr);
+  margin-top: -3.75rem;
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap);
 
   @include media-breakpoint-up($breakpoint-xs) {
-    max-width: 96.25rem;
-    padding-right: 1.875rem;
-    padding-left: 1.875rem;
+    --cols: 3;
   }
 
-  @include media-breakpoint-up($breakpoint-tablet-sm) {
-    max-width: 100rem;
-    padding-right: 3.75rem;
-    padding-left: 3.75rem;
+  @include media-breakpoint-up($breakpoint-tablet-md) {
+    --gap: 1.875rem;
   }
+}
 
-  .content-grid {
-    display: grid;
-    --gap: 1.25rem;
-    grid-template-columns: repeat(var(--cols, 2), 1fr);
-    margin-top: -3.75rem;
-    grid-column-gap: var(--gap);
-    grid-row-gap: var(--gap);
+.content-grid-2 {
+  display: grid;
+  grid-template: auto auto 1fr none;
+  gap: 6.25rem;
 
-    @include media-breakpoint-up($breakpoint-xs) {
-      --cols: 3;
-    }
-
-    @include media-breakpoint-up($breakpoint-tablet-md) {
-      --gap: 1.875rem;
-    }
+  @include media-breakpoint-up($breakpoint-tablet-lg) {
+    grid-template: auto 50% 1fr none;
+    gap: 10%;
   }
 }

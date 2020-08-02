@@ -4,11 +4,7 @@ import ContentGrid from './contentGrid';
 import './style.scss';
 
 function Content({ children }) {
-  return (
-    <section id="content" className="content">
-      {children}
-    </section>
-  );
+  return <section className="content">{children}</section>;
 }
 
 Content.propTypes = {

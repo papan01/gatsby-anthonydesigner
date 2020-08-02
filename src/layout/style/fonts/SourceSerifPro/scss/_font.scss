@@ -1,0 +1,13 @@
+$font-path: './fonts/SourceSerifPro/webfonts';
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  src: url('#{$font-path}/SourceSerifPro-Regular.eot');
+  src: url('#{$font-path}/SourceSerifPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/SourceSerifPro-Regular.woff2') format('woff2'),
+    url('#{$font-path}/SourceSerifPro-Regular.woff') format('woff'),
+    url('#{$font-path}/SourceSerifPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

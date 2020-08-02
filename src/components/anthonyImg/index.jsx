@@ -26,14 +26,17 @@ function AnthonyImg() {
   const tl = useTimeline({ delay: 0.75 });
 
   useEffect(() => {
+    tl.from(img.current, 2, { opacity: 0, ease: Power4.easeOut });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     if (scrollContext.scrollValue > 100) {
       setShouldBeMuted(true);
     } else {
       setShouldBeMuted(false);
     }
-    tl.from(img.current, 2, { opacity: 0, ease: Power4.easeOut });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [scrollContext.scrollValue]);
 
   return (
     <div className="anthony-img-container" style={{ opacity: shouldBeMuted ? 0.1 : 1 }}>
