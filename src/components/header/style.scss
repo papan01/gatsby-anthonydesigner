@@ -72,9 +72,7 @@
   }
 
   .header-title {
-    font-weight: 800;
-    font-family: Sequel, sans-serif;
-    text-transform: uppercase;
+    @extend .sequel-text;
     font-size: 6vw;
     line-height: 0.9;
     position: relative;

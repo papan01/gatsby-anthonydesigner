@@ -1,5 +1,6 @@
 @import '../../layout/style/base/flex';
 @import '../../layout/style/base/breakpoints';
+@import '../../layout/style/base/common';
 
 .top-nav-bar {
   @include flexbox;
@@ -27,15 +28,7 @@
     margin-left: auto;
 
     .navigation-link {
-      font-weight: normal;
-      font-size: 0.875rem;
-      line-height: 1;
-      font-family: TungstenMedium, sans-serif;
-      -webkit-letter-spacing: 0.5em;
-      -moz-letter-spacing: 0.5em;
-      -ms-letter-spacing: 0.5em;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
+      @extend .tungsten-text;
       display: inline-block;
       position: relative;
       z-index: 0;

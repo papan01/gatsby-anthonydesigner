@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-function SectionTitle({ viewBox, path }) {
+function SectionTitle({ viewBox, path, styleClassName }) {
   return (
-    <span className="section-title">
+    <span className={`section-title ${styleClassName}`}>
       <svg viewBox={viewBox}>
         <path d={path} />
       </svg>
@@ -15,6 +15,11 @@ function SectionTitle({ viewBox, path }) {
 SectionTitle.propTypes = {
   viewBox: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
+  styleClassName: PropTypes.string,
+};
+
+SectionTitle.defaultProps = {
+  styleClassName: '',
 };
 
 export default SectionTitle;

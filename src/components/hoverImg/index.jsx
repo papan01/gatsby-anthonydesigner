@@ -12,15 +12,14 @@ function HoverImg({ src, video, text }) {
           <source src={src} type="video/mp4" />
         </video>
       ) : (
-        <Img className="img" fluid={{ ...src.childImageSharp.fluid }} />
+        <Img className="img" fluid={{ ...src.childImageSharp.fluid }} Tag="span" />
       )}
     </span>
   );
 }
 
 HoverImg.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  src: PropTypes.object.isRequired,
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   video: PropTypes.bool,
   text: PropTypes.string.isRequired,
 };

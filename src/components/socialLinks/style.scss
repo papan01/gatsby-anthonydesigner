@@ -1,0 +1,40 @@
+@import '../../layout/style/base/flex';
+@import '../../layout/style/base/breakpoints';
+@import '../../layout/style/base/common';
+
+.social-links {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 1.25rem;
+
+  @include media-breakpoint-up($breakpoint-xs) {
+    gap: 0.625rem;
+  }
+
+  .social-link {
+    @extend .sequel-text;
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: var(--color);
+    }
+
+    &:after {
+      content: '.';
+      color: var(--color);
+    }
+  }
+
+  .social-link-footer {
+    font-size: 5vw;
+    @include media-breakpoint-up($breakpoint-tablet-lg) {
+      font-size: 2.4vw;
+    }
+  }
+
+  .social-link-content {
+    font-size: 0.875rem;
+    @include media-breakpoint-up($breakpoint-tablet-md) {
+      font-size: 1rem;
+    }
+  }
+}

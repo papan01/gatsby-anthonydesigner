@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
+import SocialLinks from '../socialLinks';
 import Space from '../space';
 import './style.scss';
 
@@ -22,24 +23,10 @@ function Footer() {
     <footer className="content">
       <Space />
       <div className="footer-container">
-        <div className="social-links">
+        <div className="social-container">
           <span className="sub-title">GET IN TOUCH</span>
           <Space styleClassName="space-20" />
-          <ul>
-            {socialLinks.map(({ name, link, color }) => (
-              <li key={name}>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={link}
-                  className="social-links"
-                  style={{ '--color': color }}
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialLinks />
           <Space styleClassName="space-50-100" />
           <p className="link-murmur ">
             Want to move forward?

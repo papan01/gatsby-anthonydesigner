@@ -1,6 +1,7 @@
 @import './fonts/TungstenMedium/scss/font';
 @import './fonts/Sequel/scss/font';
 @import './fonts/SourceSerifPro/scss/font';
+@import './base/common';
 
 ::selection {
   background-color: rgba(200, 200, 200, 0.99);
@@ -44,6 +45,7 @@ svg {
   display: inline-block;
   vertical-align: middle;
   border: 0;
+  max-width: 100%;
 }
 
 *,
@@ -97,9 +99,6 @@ ul li {
 }
 
 strong {
-  font-weight: 800;
-  line-height: 1;
-  font-family: Sequel, sans-serif;
-  text-transform: uppercase;
+  @extend .sequel-text;
   font-size: 78%;
 }

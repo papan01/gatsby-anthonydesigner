@@ -24,11 +24,35 @@
 
 .content-grid-2 {
   display: grid;
-  grid-template: auto auto 1fr none;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: none;
   gap: 6.25rem;
 
   @include media-breakpoint-up($breakpoint-tablet-lg) {
-    grid-template: auto 50% 1fr none;
+    gap: 10%;
+  }
+}
+
+.content-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  gap: 3.125rem;
+
+  @include media-breakpoint-up($breakpoint-tablet-lg) {
+    gap: 10%;
+  }
+}
+
+.content-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.25rem, 1fr));
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 6.25rem;
+  background: rgb(238, 238, 238);
+  @include media-breakpoint-up($breakpoint-tablet-lg) {
+    padding: 9.375rem;
     gap: 10%;
   }
 }

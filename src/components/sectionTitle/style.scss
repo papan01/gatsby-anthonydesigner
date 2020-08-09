@@ -18,4 +18,8 @@
     stroke-width: 1.5;
     stroke: currentcolor;
   }
+
+  &.section-title-expertise, &.section-title-affiliations {
+    margin: 0px 0px -0.65em -0.45em;
+  }  
 }

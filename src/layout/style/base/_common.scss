@@ -1,4 +1,5 @@
 @import './breakpoints';
+@import './flex';
 
 .content-indentation {
   width: 100%;
@@ -20,3 +21,32 @@
     padding-left: 3.75rem;
   }
 }
+
+.sub-title {
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-family: TungstenMedium, sans-serif;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.tungsten-text {
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-family: TungstenMedium, sans-serif;
+  -webkit-letter-spacing: 0.5em;
+  -moz-letter-spacing: 0.5em;
+  -ms-letter-spacing: 0.5em;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.sequel-text {
+  font-weight: 800;
+  line-height: 1;
+  font-family: Sequel, sans-serif;
+  text-transform: uppercase;
+}
+
