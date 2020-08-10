@@ -143,11 +143,67 @@ const query = graphql`
         }
       }
     }
+    webby: file(relativePath: { eq: "webby.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    how: file(relativePath: { eq: "how.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    communicator: file(relativePath: { eq: "communicator.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    tellys: file(relativePath: { eq: "tellys.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    w3: file(relativePath: { eq: "w3.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    aaa: file(relativePath: { eq: "aaa.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    hermes: file(relativePath: { eq: "hermes.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    dotcomm: file(relativePath: { eq: "dotcomm.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;
 
 function About() {
-  const { hot100 } = useStaticQuery(query);
+  const { hot100, webby, communicator, tellys, how, w3, aaa, hermes, dotcomm } = useStaticQuery(query);
   return (
     <div className="about">
       <AnthonyImg />
@@ -370,7 +426,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="WEBBY AWARDS" />
+                  <HoverImg src={webby} text="WEBBY AWARDS" />
                 </span>
               </td>
               <td>People’s Voice</td>
@@ -380,7 +436,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="HOW DESIGN AWARDS" />
+                  <HoverImg src={how} text="HOW DESIGN AWARDS" />
                 </span>
               </td>
               <td>Reader’s Choice</td>
@@ -390,7 +446,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="The Telly Awards" />
+                  <HoverImg src={tellys} text="The Telly Awards" />
                 </span>
               </td>
               <td>Silver</td>
@@ -400,7 +456,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="W3 AWARDS" />
+                  <HoverImg src={w3} text="W3 AWARDS" />
                 </span>
               </td>
               <td>Silver</td>
@@ -410,7 +466,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="COMMUNICATOR AWARDS" />
+                  <HoverImg src={communicator} text="COMMUNICATOR AWARDS" />
                 </span>
               </td>
               <td>Silver</td>
@@ -420,7 +476,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="AMERICAN ADVERTISING AWARDS" />
+                  <HoverImg src={aaa} text="AMERICAN ADVERTISING AWARDS" />
                 </span>
               </td>
               <td>Silver</td>
@@ -430,7 +486,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="HERMES CREATIVE AWARDS" />
+                  <HoverImg src={hermes} text="HERMES CREATIVE AWARDS" />
                 </span>
               </td>
               <td>Platinum</td>
@@ -440,7 +496,7 @@ function About() {
             <tr>
               <td>
                 <span className="sequel-text">
-                  <HoverImg video src={Usc} text="DOTCOMM AWARDS" />
+                  <HoverImg src={dotcomm} text="DOTCOMM AWARDS" />
                 </span>
               </td>
               <td>Platinum</td>
