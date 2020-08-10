@@ -1,6 +1,6 @@
-import "core-js/modules/es6.number.constructor";
-import "core-js/modules/es6.array.index-of";
-import "core-js/modules/es6.regexp.split";
+import 'core-js/modules/es6.number.constructor';
+import 'core-js/modules/es6.array.index-of';
+import 'core-js/modules/es6.regexp.split';
 
 /*!
  * VERSION: 0.3.1
@@ -10,52 +10,64 @@ import "core-js/modules/es6.regexp.split";
  * @license Copyright (c) 2008-2019, GreenSock. All rights reserved.
  * This work is subject to the terms at http://greensock.com/standard-license or for
  * Club GreenSock members, the software agreement that was issued with your membership.
- * 
+ *
  * @author: Jack Doyle, jack@greensock.com
  **/
 
 /* eslint-disable */
-import { _gsScope } from "./TweenLite.js";
+import { _gsScope } from './TweenLite.js';
 export var DirectionalRotationPlugin = _gsScope._gsDefine.plugin({
-  propName: "directionalRotation",
-  version: "0.3.1",
+  propName: 'directionalRotation',
+  version: '0.3.1',
   API: 2,
   //called when the tween renders for the first time. This is where initial values should be recorded and any setup routines should run.
   init: function init(target, value, tween, index) {
-    if (typeof value !== "object") {
+    if (typeof value !== 'object') {
       value = {
-        rotation: value
+        rotation: value,
       };
     }
 
     this.finals = {};
     var cap = value.useRadians === true ? Math.PI * 2 : 360,
-        min = 0.000001,
-        p,
-        v,
-        start,
-        end,
-        dif,
-        split;
+      min = 0.000001,
+      p,
+      v,
+      start,
+      end,
+      dif,
+      split;
 
     for (p in value) {
-      if (p !== "useRadians") {
+      if (p !== 'useRadians') {
         end = value[p];
 
-        if (typeof end === "function") {
+        if (typeof end === 'function') {
           end = end(index, target);
         }
 
-        split = (end + "").split("_");
+        split = (end + '').split('_');
         v = split[0];
-        start = parseFloat(typeof target[p] !== "function" ? target[p] : target[p.indexOf("set") || typeof target["get" + p.substr(3)] !== "function" ? p : "get" + p.substr(3)]());
-        end = this.finals[p] = typeof v === "string" && v.charAt(1) === "=" ? start + parseInt(v.charAt(0) + "1", 10) * Number(v.substr(2)) : Number(v) || 0;
+        start = parseFloat(
+          typeof target[p] !== 'function'
+            ? target[p]
+            : target[
+                p.indexOf('set') ||
+                typeof target['get' + p.substr(3)] !== 'function'
+                  ? p
+                  : 'get' + p.substr(3)
+              ]()
+        );
+        end = this.finals[p] =
+          typeof v === 'string' && v.charAt(1) === '='
+            ? start + parseInt(v.charAt(0) + '1', 10) * Number(v.substr(2))
+            : Number(v) || 0;
         dif = end - start;
 
         if (split.length) {
-          v = split.join("_");
+          v = split.join('_');
 
-          if (v.indexOf("short") !== -1) {
+          if (v.indexOf('short') !== -1) {
             dif = dif % cap;
 
             if (dif !== dif % (cap / 2)) {
@@ -63,10 +75,10 @@ export var DirectionalRotationPlugin = _gsScope._gsDefine.plugin({
             }
           }
 
-          if (v.indexOf("_cw") !== -1 && dif < 0) {
-            dif = (dif + cap * 9999999999) % cap - (dif / cap | 0) * cap;
-          } else if (v.indexOf("ccw") !== -1 && dif > 0) {
-            dif = (dif - cap * 9999999999) % cap - (dif / cap | 0) * cap;
+          if (v.indexOf('_cw') !== -1 && dif < 0) {
+            dif = ((dif + cap * 9999999999) % cap) - ((dif / cap) | 0) * cap;
+          } else if (v.indexOf('ccw') !== -1 && dif > 0) {
+            dif = ((dif - cap * 9999999999) % cap) - ((dif / cap) | 0) * cap;
           }
         }
 
@@ -99,7 +111,7 @@ export var DirectionalRotationPlugin = _gsScope._gsDefine.plugin({
         pt = pt._next;
       }
     }
-  }
+  },
 });
 DirectionalRotationPlugin._autoCSS = true;
 export { DirectionalRotationPlugin as default };

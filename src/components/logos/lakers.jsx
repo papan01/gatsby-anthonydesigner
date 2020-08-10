@@ -47,7 +47,7 @@ const query = graphql`
   }
 `;
 
-function Lakers({ fadeInStyle }) {
+function Lakers() {
   const { cover } = useStaticQuery(query);
   const tl = useTimeline({ paused: true });
   const textRefs = [useRef(), useRef()];
@@ -71,7 +71,11 @@ function Lakers({ fadeInStyle }) {
       opacity: 1,
     });
 
-    tl.to(textRefs[0].current, 0.8, { x: 0, opacity: 1, ease: Power3.easeOut });
+    tl.to(textRefs[0].current, 0.8, {
+      x: 0,
+      opacity: 1,
+      ease: Power3.easeOut,
+    });
     tl.to(textRefs[1].current, 0.8, { x: 0, opacity: 1, ease: Power3.easeOut }, '-=.6');
     tl.to(maskRefCurrents, 1.3, { drawSVG: '100%', ease: Power3.easeInOut }, '-=.8');
   });

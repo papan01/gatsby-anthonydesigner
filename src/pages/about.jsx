@@ -8,6 +8,7 @@ import HoverImg from '../components/hoverImg';
 import Space from '../components/space';
 import Footer from '../components/footer';
 import SectionTitle from '../components/sectionTitle';
+import AutoScale from '../components/animation';
 
 import Jordan from '../../static/video/jordan.mp4';
 import Payton from '../../static/video/payton.mp4';
@@ -21,7 +22,115 @@ import imcLogo from '../../static/affiliations/imc.svg';
 import designedLogo from '../../static/affiliations/designed.svg';
 import uscLogo from '../../static/affiliations/usc.svg';
 
+import FirstCentury from '../../static/clients/1stCentury.svg';
+import Onestdibs from '../../static/clients/1stdibs.svg';
+import abc from '../../static/clients/abc.svg';
+import AChotels from '../../static/clients/AChotels.svg';
+import adonit from '../../static/clients/adonit.svg';
+import AIGA from '../../static/clients/AIGA.svg';
+import amc from '../../static/clients/amc.svg';
+import azubu from '../../static/clients/azubu.svg';
+import BatteryWharf from '../../static/clients/BatteryWharf.svg';
+import berggruen from '../../static/clients/berggruen.svg';
+import bravo from '../../static/clients/bravo.svg';
+import butterfinger from '../../static/clients/butterfinger.svg';
+import calpoly from '../../static/clients/calpoly.svg';
+import cbsinteractive from '../../static/clients/cbsinteractive.svg';
+import chadburry from '../../static/clients/chadburry.svg';
+import coffeemate from '../../static/clients/coffeemate.svg';
+import coldwellbanker from '../../static/clients/coldwellbanker.svg';
+import dignityhealth from '../../static/clients/dignityhealth.svg';
+import directtv from '../../static/clients/directtv.svg';
+import equityoffice from '../../static/clients/equityoffice.svg';
+import espn from '../../static/clients/espn.svg';
+import fox from '../../static/clients/fox.svg';
+import gatorade from '../../static/clients/gatorade.svg';
+import hampton from '../../static/clients/hampton.svg';
+import hollywoodmedia from '../../static/clients/hollywoodmedia.svg';
+import hotpockets from '../../static/clients/hotpockets.svg';
+import instantly from '../../static/clients/instantly.svg';
+import itv from '../../static/clients/itv.svg';
+import kraft from '../../static/clients/kraft.svg';
+import lacare from '../../static/clients/lacare.svg';
+import lionsgate from '../../static/clients/lionsgate.svg';
+import logix from '../../static/clients/logix.svg';
+import metro from '../../static/clients/metro.svg';
+import motiv from '../../static/clients/motiv.svg';
+import msnbc from '../../static/clients/msnbc.svg';
+import nestle from '../../static/clients/nestle.svg';
+import pressbros from '../../static/clients/pressbros.svg';
+import rams from '../../static/clients/rams.svg';
+import ronhami from '../../static/clients/ronhami.svg';
+import santamonicaplaza from '../../static/clients/santamonicaplaza.svg';
+import sapphire from '../../static/clients/sapphire.svg';
+import smokeybones from '../../static/clients/smokeybones.svg';
+import sothebys from '../../static/clients/sothebys.svg';
+import tennischannel from '../../static/clients/tennischannel.svg';
+import tmz from '../../static/clients/tmz.svg';
+import toyota from '../../static/clients/toyota.svg';
+import uw from '../../static/clients/uw.svg';
+import voskos from '../../static/clients/voskos.svg';
+import westfield from '../../static/clients/westfield.svg';
+import lafc from '../../static/clients/lafc.svg';
+import whotels from '../../static/clients/whotels.svg';
+import jphro from '../../static/clients/jphro.svg';
+
 import './about.scss';
+
+const clients = [
+  FirstCentury,
+  Onestdibs,
+  abc,
+  AChotels,
+  adonit,
+  AIGA,
+  amc,
+  azubu,
+  BatteryWharf,
+  berggruen,
+  bravo,
+  butterfinger,
+  calpoly,
+  cbsinteractive,
+  chadburry,
+  coffeemate,
+  coldwellbanker,
+  dignityhealth,
+  directtv,
+  equityoffice,
+  espn,
+  fox,
+  gatorade,
+  hampton,
+  hollywoodmedia,
+  hotpockets,
+  instantly,
+  itv,
+  kraft,
+  lacare,
+  lionsgate,
+  logix,
+  metro,
+  motiv,
+  msnbc,
+  nestle,
+  pressbros,
+  rams,
+  ronhami,
+  santamonicaplaza,
+  sapphire,
+  smokeybones,
+  sothebys,
+  tennischannel,
+  tmz,
+  toyota,
+  uw,
+  voskos,
+  westfield,
+  lafc,
+  whotels,
+  jphro,
+];
 
 const titles = ['competition', 'and creativity', 'runs hard in', 'his veins.'];
 
@@ -235,7 +344,112 @@ function About() {
           <Space styleClassName="space-100-200" />
         </Content>
       </div>
-      <Content />
+      <Content>
+        <Space styleClassName="space-100-200" />
+        <SectionTitle
+          viewBox="0 0 997.7 132.6"
+          path="M934.5 42h56.8c-1.5-32.8-32.8-41-78.4-41-45.9 0-78.7 8.2-78.5 41.1.2 27.2 21.4 34.8 47.8 37.7l39.4 4.4c12.6 1.4 15.5 4.1 15.5 8.7s-4.4 7-22.3 7c-15.8 0-24.8-2.2-25.7-12.9h-57.8c1.5 36.4 30.1 44.5 82.8 44.5 53.7 0 82.6-6.8 82.6-42.7 0-25.5-18.7-36.4-47.8-39.1l-42.2-3.9c-11.9-1-14.8-3.1-14.8-7.3s3.9-7 20.2-7c14.9.1 21.7 4.2 22.4 10.5zM832.8 5.6H686.9V42h47.4v85h51V42h47.4V5.6h.1zm-198.2 0v63.6h-1L583.1 5.6h-58.6V127h47.9V62.7h1l51.2 64.3h58V5.6h-48zM430.9 36.5h86.5V5.6H379.9V127h138.5V96.5h-87.5V79.9H513v-28h-82.1V36.5zM372.3 127V5.6h-51V127h51zm-55.9 0V91.3h-84.5V5.6h-51V127h135.5zM116.3 54.5h58.8C174.2 20.2 147.4 1 88.5 1S1 21.9 1 66.3s28.7 65.3 87.5 65.3 86-19.2 86.9-56.4h-58.8c-1 10.7-6.5 19-28.1 19s-31.8-10-31.8-27.9c0-17.8 10.2-27.9 31.8-27.9s26.9 8.3 27.8 16.1z"
+        />
+        <ContentGrid styleClassName="content-grid-5">
+          {clients.map(src => (
+            <AutoScale key={src}>
+              <img src={src} alt="" />
+            </AutoScale>
+          ))}
+        </ContentGrid>
+        <Space styleClassName="space-100-200" />
+      </Content>
+      <Content>
+        <SectionTitle
+          viewBox="0 0 1036.19 132.5"
+          path="M972.99 42h56.8c-1.5-32.8-32.8-41-78.4-41-45.9 0-78.7 8.2-78.5 41.1.2 27.2 21.4 34.8 47.8 37.7l39.4 4.4c12.6 1.4 15.5 4.1 15.5 8.7s-4.4 7-22.3 7c-15.8 0-24.8-2.2-25.7-12.9h-57.8c1.5 36.4 30.1 44.5 82.8 44.5 53.7 0 82.6-6.8 82.6-42.7 0-25.5-18.7-36.4-47.8-39.1l-42.2-3.9c-11.9-1-14.8-3.1-14.8-7.3s3.9-7 20.2-7c14.9.1 21.7 4.2 22.4 10.5zm-189.4-.7c20.2 0 29.2 6.8 29.2 25s-9 25-29.2 25h-23.5v-50h23.5zm13.9-35.7h-88.4V127h88.4c49.1 0 71.1-16.3 71.1-60.7s-21.9-60.7-71.1-60.7zm-162.5 57.3h-38.1V42.1h38.1c9.7 0 12.9 3.4 12.9 10.5 0 7-3.4 10.3-12.9 10.3zm44.9 19.5v-1.7c15.6-4.1 24.8-13.4 24.8-33.3 0-26.5-13.1-41.8-54.1-41.8h-104.7V127h51V92.6h34.5l19.7 34.3h56.3l-27.5-44.5zM438.39 80l15.8-35h1l15.8 35h-32.6zm53.6 47h54.6L488.09 5.6h-67L362.69 127h54.6l6.9-15.3h61l6.8 15.3zm-139.9 0l33.7-121.4h-51.2l-15.6 73.6h-1l-17.2-73.6h-53.4l-17 73.6h-1l-15.5-73.6h-51.5l32.7 121.4h61.7l16.8-72.8h1l16.8 72.8h60.7zM77.29 80l15.8-35h1l15.8 35h-32.6zm53.7 47h54.6L127.09 5.6h-67L1.59 127h54.6l6.9-15.3h61l6.9 15.3z"
+        />
+        <Space styleClassName="space-80" />
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="WEBBY AWARDS" />
+                </span>
+              </td>
+              <td>People’s Voice</td>
+              <td>Motiv Inc.</td>
+              <td>2017</td>
+            </tr>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="HOW DESIGN AWARDS" />
+                </span>
+              </td>
+              <td>Reader’s Choice</td>
+              <td>Ad Victorem</td>
+              <td>2018</td>
+            </tr>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="The Telly Awards" />
+                </span>
+              </td>
+              <td>Silver</td>
+              <td>Metro Los Angeles</td>
+              <td>2018</td>
+            </tr>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="W3 AWARDS" />
+                </span>
+              </td>
+              <td>Silver</td>
+              <td>Motiv Inc.</td>
+              <td>2018</td>
+            </tr>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="COMMUNICATOR AWARDS" />
+                </span>
+              </td>
+              <td>Silver</td>
+              <td>Motiv Inc.</td>
+              <td>2017</td>
+            </tr>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="AMERICAN ADVERTISING AWARDS" />
+                </span>
+              </td>
+              <td>Silver</td>
+              <td>Motiv Inc.</td>
+              <td>2017</td>
+            </tr>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="HERMES CREATIVE AWARDS" />
+                </span>
+              </td>
+              <td>Platinum</td>
+              <td>Motiv Inc.</td>
+              <td>2017</td>
+            </tr>
+            <tr>
+              <td>
+                <span className="sequel-text">
+                  <HoverImg video src={Usc} text="DOTCOMM AWARDS" />
+                </span>
+              </td>
+              <td>Platinum</td>
+              <td>Motiv Inc.</td>
+              <td>2017</td>
+            </tr>
+          </tbody>
+        </table>
+      </Content>
       <Footer />
     </div>
   );

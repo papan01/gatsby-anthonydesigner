@@ -33,6 +33,10 @@
   }
 }
 
+.space-80 {
+  height: 80px;
+}
+
 .space-100-200 {
   height: 100px;
   @include media-breakpoint-up($breakpoint-tablet-lg) {

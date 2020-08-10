@@ -8,4 +8,14 @@ import ESPN from './espn';
 import LAFC from './lafc';
 import FOX from './fox';
 
-export default { Lakers, DisneyPlus, Motiv, Rams, AcHotels, Nestea, ESPN, LAFC, FOX };
+export default {
+  Lakers,
+  DisneyPlus,
+  Motiv,
+  Rams,
+  AcHotels,
+  Nestea,
+  ESPN,
+  LAFC,
+  FOX,
+};

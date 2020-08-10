@@ -56,3 +56,21 @@
     gap: 10%;
   }
 }
+
+.content-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 5rem;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 15vw;
+
+  @include media-breakpoint-up($breakpoint-tablet-md) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10vw 12vw;
+  }
+
+  @include media-breakpoint-up($breakpoint-laptop-sm) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

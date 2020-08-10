@@ -10,7 +10,17 @@
  * @author: Jack Doyle, jack@greensock.com
  * */
 /* eslint-disable */
-import TweenLite, { _gsScope, TweenPlugin, Ease, Power0, Power1, Power2, Power3, Power4, Linear } from './TweenLite.js';
+import TweenLite, {
+  _gsScope,
+  TweenPlugin,
+  Ease,
+  Power0,
+  Power1,
+  Power2,
+  Power3,
+  Power4,
+  Linear,
+} from './TweenLite.js';
 import TimelineLite from './TimelineLite.js';
 import TimelineMax from './TimelineMax.js';
 import TweenMax from './TweenMax.js';
@@ -21,7 +31,18 @@ import DirectionalRotationPlugin from './DirectionalRotationPlugin.js';
 import BezierPlugin from './BezierPlugin.js';
 import MorphSVGPlugin from './MorphSVGPlugin.js';
 import DrawSVGPlugin from './DrawSVGPlugin.js';
-import { Back, Elastic, Bounce, RoughEase, SlowMo, SteppedEase, Circ, Expo, Sine, ExpoScaleEase } from './EasePack.js';
+import {
+  Back,
+  Elastic,
+  Bounce,
+  RoughEase,
+  SlowMo,
+  SteppedEase,
+  Circ,
+  Expo,
+  Sine,
+  ExpoScaleEase,
+} from './EasePack.js';
 
 export { TweenMax as default };
 export {

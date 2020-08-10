@@ -11,32 +11,40 @@
  */
 
 /* eslint-disable */
-import { _gsScope } from "./TweenLite.js";
+import { _gsScope } from './TweenLite.js';
 export var AttrPlugin = _gsScope._gsDefine.plugin({
-  propName: "attr",
+  propName: 'attr',
   API: 2,
-  version: "0.6.1",
+  version: '0.6.1',
   //called when the tween renders for the first time. This is where initial values should be recorded and any setup routines should run.
   init: function init(target, value, tween, index) {
     var p, end;
 
-    if (typeof target.setAttribute !== "function") {
+    if (typeof target.setAttribute !== 'function') {
       return false;
     }
 
     for (p in value) {
       end = value[p];
 
-      if (typeof end === "function") {
+      if (typeof end === 'function') {
         end = end(index, target);
       }
 
-      this._addTween(target, "setAttribute", target.getAttribute(p) + "", end + "", p, false, p);
+      this._addTween(
+        target,
+        'setAttribute',
+        target.getAttribute(p) + '',
+        end + '',
+        p,
+        false,
+        p
+      );
 
       this._overwriteProps.push(p);
     }
 
     return true;
-  }
+  },
 });
 export { AttrPlugin as default };

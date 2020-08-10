@@ -22,10 +22,30 @@ function Logo() {
       drawSVG: '0%',
       ease: Power4.easeInOut,
     });
-    tl.from(path02.current, 0.5, { drawSVG: '100% 100%', ease: Power4.easeInOut }, '-=.3');
-    tl.from(path03.current, 0.5, { drawSVG: '100% 100%', ease: Power4.easeInOut }, '-=.2');
-    tl.from(firstname.current, 0.5, { xPercent: 20, scaleX: 1.7, opacity: 0, ease: Power4.easeOut }, '-=.4');
-    tl.from(lastname.current, 0.5, { xPercent: 20, scaleX: 1.7, opacity: 0, ease: Power4.easeOut }, '-=.4');
+    tl.from(
+      path02.current,
+      0.5,
+      { drawSVG: '100% 100%', ease: Power4.easeInOut },
+      '-=.3'
+    );
+    tl.from(
+      path03.current,
+      0.5,
+      { drawSVG: '100% 100%', ease: Power4.easeInOut },
+      '-=.2'
+    );
+    tl.from(
+      firstname.current,
+      0.5,
+      { xPercent: 20, scaleX: 1.7, opacity: 0, ease: Power4.easeOut },
+      '-=.4'
+    );
+    tl.from(
+      lastname.current,
+      0.5,
+      { xPercent: 20, scaleX: 1.7, opacity: 0, ease: Power4.easeOut },
+      '-=.4'
+    );
     tl.to(lastname.current, 0.5, {
       delay: 1,
       xPercent: 20,
@@ -44,7 +64,7 @@ function Logo() {
         opacity: 0,
         ease: Power4.easeIn,
       },
-      '-=.35',
+      '-=.35'
     );
 
     showNameTL.staggerFromTo(
@@ -52,7 +72,7 @@ function Logo() {
       0.5,
       { xPercent: 20, scaleX: 1.2, opacity: 0 },
       { xPercent: 0, scaleX: 1, opacity: 1, ease: Power4.easeOut },
-      0.1,
+      0.1
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -67,10 +87,21 @@ function Logo() {
 
   return (
     <Link to="/">
-      <svg ref={root} viewBox="0 0 302.4 38.4" onMouseOver={showName} onMouseLeave={hideName} className="logo-svg">
+      <svg
+        ref={root}
+        viewBox="0 0 302.4 38.4"
+        onMouseOver={showName}
+        onMouseLeave={hideName}
+        className="logo-svg"
+      >
         <title>Anthony Wiktor</title>
         <mask id={mask.current}>
-          <g transform="translate(-108.5 -101)" fill="none" stroke="#fff" strokeWidth={9.2}>
+          <g
+            transform="translate(-108.5 -101)"
+            fill="none"
+            stroke="#fff"
+            strokeWidth={9.2}
+          >
             <path ref={path01} d="M.5 1.7l15.2 37.6" />
             <path ref={path02} d="M18.3-.9L32.4 37" />
             <path ref={path03} d="M35.6-.9L49.9 37" />

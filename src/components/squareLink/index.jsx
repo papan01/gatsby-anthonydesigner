@@ -6,7 +6,14 @@ import { ScrollContext } from '../scroller';
 import SCROLL_TOP_ANIMATION from '../../constants';
 import './style.scss';
 
-function SquareLink({ children, cover, href, title, onMouseEnter, onMouseLeave }) {
+function SquareLink({
+  children,
+  cover,
+  href,
+  title,
+  onMouseEnter,
+  onMouseLeave,
+}) {
   const [linkClassName, setLinkClassName] = useState('square-link-white');
   const scrollContext = useContext(ScrollContext);
   useEffect(() => {
@@ -28,7 +35,10 @@ function SquareLink({ children, cover, href, title, onMouseEnter, onMouseLeave }
         onMouseLeave={onMouseLeave}
         onFocus={onMouseEnter}
       >
-        <Img fluid={{ ...cover.childImageSharp.fluid }} className="square-img" />
+        <Img
+          fluid={{ ...cover.childImageSharp.fluid }}
+          className="square-img"
+        />
         {children}
       </a>
     </div>

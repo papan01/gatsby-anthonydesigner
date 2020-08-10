@@ -36,7 +36,11 @@ function DisneyPlus() {
     tl.set(svg.current, { opacity: 1 });
     tl.set(letters, { opacity: 0 });
     tl.set(flypath.current, { drawSVG: '0%' });
-    tl.set(plus.current, { transformOrigin: 'center', scale: 0.5, opacity: 0 });
+    tl.set(plus.current, {
+      transformOrigin: 'center',
+      scale: 0.5,
+      opacity: 0,
+    });
     tl.staggerTo(letters, 1, { opacity: 1 }, 0.07);
     tl.to(flypath.current, 1.5, { drawSVG: '100%', ease: Power3.easeInOut }, '-=1.2');
     tl.to(plus.current, 0.5, { scale: 1, opacity: 1, ease: Back.easeOut }, '-=.5');
